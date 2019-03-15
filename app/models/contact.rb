@@ -1,4 +1,11 @@
 class Contact < ApplicationRecord
+  #Validations
+  validates_presence_of :kind
+  validates_presence_of :address
+
+  #kaminari
+  paginates_per 5
+
   belongs_to :kind
   has_many :phones
   has_one :address
